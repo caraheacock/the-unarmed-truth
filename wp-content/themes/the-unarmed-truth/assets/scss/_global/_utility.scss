@@ -19,6 +19,10 @@
     }
 }
 
+.button {
+    @extend %button;
+}
+
 %clearfix {
     &:after {
         clear: both;

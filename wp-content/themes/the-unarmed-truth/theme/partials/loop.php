@@ -15,5 +15,5 @@
     
     the_excerpt();
     ?>
-    <a class="pz-button" href="<?php echo get_the_permalink(get_the_ID()); ?>"><?php _e('Read More', 'unarmed-truth'); ?></a>
+    <a class="button" href="<?php echo get_the_permalink(get_the_ID()); ?>"><?php _e('Read More', 'unarmed-truth'); ?></a>
 </div>

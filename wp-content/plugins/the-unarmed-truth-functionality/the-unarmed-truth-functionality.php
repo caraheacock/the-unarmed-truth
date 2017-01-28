@@ -20,4 +20,14 @@ if (!defined('ABSPATH')) exit;
 define('UTRUF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('UTRUF_PLUGIN_URL', plugins_url('/', __FILE__));
 
+/* Load meta fields */
+foreach (glob(UTRUF_PLUGIN_DIR . 'meta-data/*.php') as $filename) {
+    require_once($filename);
+}
+
+/* Load custom taxonomies */
+foreach (glob(UTRUF_PLUGIN_DIR . 'taxonomies/*.php') as $filename) {
+    require_once($filename);
+}
+
 ?>
