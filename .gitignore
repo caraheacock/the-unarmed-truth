@@ -87,5 +87,5 @@ Thumbs.db
 
 # track these mu-plugins, plugins, and themes
 # add your own entries here
-!wp-content/plugins/the-unarmed-truth-func/
+!wp-content/plugins/the-unarmed-truth-functionality/
 !wp-content/themes/the-unarmed-truth/
