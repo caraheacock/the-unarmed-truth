@@ -30,4 +30,9 @@ foreach (glob(UTRUF_PLUGIN_DIR . 'taxonomies/*.php') as $filename) {
     require_once($filename);
 }
 
+/* Add miscellaneous plugin setup */
+foreach (glob(UTRUF_PLUGIN_DIR . 'setup/*.php') as $filename) {
+    require_once($filename);
+}
+
 ?>
