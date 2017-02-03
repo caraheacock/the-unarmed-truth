@@ -2,10 +2,6 @@
 /* Forms */
 /*-------*/
 
-form {
-    @extend %clearfix;
-}
-
 label {
     display: block;
     font-weight: $bold;
@@ -13,7 +9,7 @@ label {
 }
 
 label, input, select, textarea {
-    font: 16px / 1.5 $open-sans;
+    font: 16px / 1.5 $lato;
     font-size: 1.6rem;
 }
 
@@ -26,10 +22,8 @@ input, select, textarea {
     width: 100%;
     margin: 0.2rem 0 $text-space-unit 0;
     padding: 0.5rem 1rem;
-    border: solid 1px $medium-gray;
-    @extend %default-border-radius;
-    background-color: #fff;
-    @extend %default-transition;
+    border: 0;
+    background-color: $dark-sand;
 }
 
 input, select {
@@ -61,10 +55,6 @@ input {
     
     &[type='radio'] {
         -webkit-appearance: radio;
-    }
-    
-    &[type='submit'] {
-        float: right;
     }
 }
 

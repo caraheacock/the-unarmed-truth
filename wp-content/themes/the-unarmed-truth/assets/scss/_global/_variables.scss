@@ -10,13 +10,14 @@ $size-xl: 1024px;
 
 // General sizes of things
 $max-width: 1200px;
-$nav-height: 7rem;
+$nav-height: 10rem;
 
 $space-unit: 3rem;
 $text-space-unit: 1rem;
 
 // Font families
-$open-sans: 'Open Sans', sans-serif;
+$cantana-one: 'Cantata One', serif;
+$lato: 'Lato', sans-serif;;
 
 // Font weights so we don't have to remember stuff like "semibold" is 600, etc.
 $hairline: 100;
@@ -27,7 +28,19 @@ $medium: 500;
 $semibold: 600;
 $bold: 700;
 $extrabold: 800;
+$black: 900;
 
 // Colors~!
+$sand: #fff7e7;
+$dark-sand: #f3dfb7;
+$gray-tan: #c8b8a7;
+$dark-gray-tan: #95867b;
+$brown: #543620;
+$blue: #222983;
+$light-blue: #2250b5;
+$red: #d75543;
+$light-red: #ef7b6b;
+$dark-red: #8e3024;
+
 $light-gray: #eee;
 $medium-gray: #aaa;

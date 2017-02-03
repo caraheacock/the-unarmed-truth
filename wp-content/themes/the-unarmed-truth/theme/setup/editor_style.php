@@ -11,7 +11,7 @@
  */
 function utru_add_editor_styles() {
     add_editor_style(array(
-        '//fonts.googleapis.com/css?family=Open+Sans:300%2C300i%2C400%2C400i%2C600%2C600i%2C700%2C700i',
+        '//fonts.googleapis.com/css?family=Cantata+One|Lato:400%2C400i%2C700',
         'assets/css/editor-style.css'
     ));
 }

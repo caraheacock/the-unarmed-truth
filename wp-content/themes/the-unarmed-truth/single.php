@@ -34,6 +34,17 @@ $news_source = wp_get_post_terms(get_the_ID(), 'utruf_news_source');
                 </div>
                 
                 <div class="single-post-content<?php if (comments_open()) echo ' comments-open'; ?>">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="wp-caption">
+                            <?php
+                            the_post_thumbnail('large');
+                            $image_id = get_post_thumbnail_id(get_the_ID());
+                            $image = get_post($image_id);
+                            echo '<p class="wp-caption-text">' . $image->post_excerpt . '</p>';
+                            ?>
+                        </div>
+                    <?php endif; ?>
+                    
                     <?php the_content(); ?>
                     
                     <?php if (!empty($article_meta['link'])) : ?>

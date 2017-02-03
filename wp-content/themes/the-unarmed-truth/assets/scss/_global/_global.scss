@@ -9,15 +9,8 @@ html {
 
 body {
     overflow-x: hidden;
-    background-color: #fff;
-    font: 14px / 1.5 $open-sans;
-    font-size: 1.4rem;
+    background-color: $sand;
     -webkit-font-smoothing: subpixel-antialiased;
-    
-    @include breakpoint($size-md) {
-        font-size: 1.8rem;
-        line-height: 2;
-    }
 }
 
 main {

@@ -10,7 +10,7 @@ function utru_scripts() {
     /* Google fonts */
     wp_enqueue_style(
         'unarmed-truth-google-fonts',
-        '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i'
+        '//fonts.googleapis.com/css?family=Cantata+One|Lato:400,400i,700'
     );
     
     /* Main style */

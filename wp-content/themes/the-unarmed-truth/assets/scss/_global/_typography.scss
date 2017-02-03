@@ -2,10 +2,6 @@
 /* Typography */
 /*------------*/
 
-h1, h2, h3, h4, h5, h6, p, li, th, td {
-    font-family: $open-sans;
-}
-
 h1, h2, h3, h4, h5, h6, p, ul, ol {
     &:first-child {
         margin-top: 0;
@@ -22,6 +18,8 @@ h1, h2, h3, h4, h5, h6, ul, ol {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: $text-space-unit * 2;
+    color: $blue;
+    font-family: $cantana-one;
     font-weight: $semibold;
     line-height: 1.2;
     
@@ -30,12 +28,12 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     a {
-        text-decoration: none;
+        color: $blue;
+        
+        &:hover, &:focus {
+            color: $red;
+        }
     }
-}
-
-h1, h2, h3 {
-    text-transform: uppercase;
 }
 
 h1 {
@@ -62,7 +60,8 @@ h6 {
     font-size: 1.2rem;
 }
 
-p, li, th, td {
+body, p, li, th, td {
+    font-family: $lato;
     font-size: 1.4rem;
 }
 
@@ -70,7 +69,7 @@ p, li, td {
     font-weight: $normal;
 }
 
-p, li {
+body, p, li {
     line-height: 1.75;
 }
 
@@ -94,11 +93,16 @@ pre {
 hr {
     margin: ($text-space-unit * 2) 0;
     border: 0;
-    border-bottom: solid 1px $medium-gray;
+    border-bottom: solid 1px $gray-tan;
 }
 
 a {
-    @extend %default-transition;
+    color: $light-blue;
+    text-decoration: none;
+    
+    &:hover, &:focus {
+        color: $red;
+    }
 }
 
 @include breakpoint($size-md) {
@@ -130,12 +134,8 @@ a {
         font-size: 1.4rem;
     }
     
-    p, li, th, td {
+    body, p, li, th, td {
         font-size: 1.8rem;
-    }
-    
-    p, li {
-        line-height: 2;
     }
     
     hr {

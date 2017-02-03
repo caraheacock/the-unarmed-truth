@@ -2,13 +2,11 @@
 /* Navigation Bar */
 /*----------------*/
 
-.main-nav {
-    @include box-shadow(0px 2px 2px 0px rgba(#000, 0.05));
+.mainNav {
     position: fixed;
     z-index: 2;
     width: 100%;
-    background-color: $medium-gray;
-    background-color: rgba($medium-gray, 0.9);
+    background-color: $sand;
     
     .row {
         @include align-items(center);
@@ -20,44 +18,56 @@
         margin: 0;
     }
     
-    img {
-        display: block;
-        width: auto;
-        max-height: 50px;
-        
-        @include breakpoint($size-md) {
-            margin-left: 15px;
-        }
+    li {
+        margin: 0;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
     }
     
     a {
-        text-decoration: none;
-        color: #fff;
+        color: $dark-gray-tan;
         
-        img {
-            /* Fix blurriness when scaling/transitioning */
-            @include filter(blur(0));
-            /* Fix for blur filter causing issues in IE9 */
-            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
-            @extend %default-transition;
+        &:hover, &:focus {
+            color: $light-blue;
+        }
+    }
+    
+    &__logo {
+        width: 15rem;
+        height: ($nav-height - 3rem);
+        
+        svg {
+            width: auto;
+            height: ($nav-height - 3rem);
         }
         
-        &:hover, &:active {
-            img {
-                opacity: 0.75;;
-            }
+        @include breakpoint($size-md) {
+            margin-left: 1.5rem;
         }
+    }
+    
+    &::after {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: block;
+        height: 9px;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 8.91"><g><polygon points="7.5 8.91 0 1.41 0 0 15 0 15 1.41 7.5 8.91" fill="%23fff7e7"/><polygon points="7.5 8.91 0 1.41 0 0 7.5 7.5 15 0 15 1.41 7.5 8.91" fill="%23c8b8a7"/></g></svg>');
+        background-position: top center;
+        background-repeat: repeat-x;
+        content: ' ';
     }
 }
 
 @include breakpoint(601px) {
-    body.admin-bar #nav {
+    body.admin-bar .mainNav {
         top: 46px;
     }
 }
 
 @include breakpoint(783px) {
-    body.admin-bar #nav {
+    body.admin-bar .mainNav {
         top: 32px;
     }
 }
@@ -79,7 +89,6 @@
     }
     
     ul {
-        @include box-shadow(0px 2px 2px 0px rgba(#000, 0.05));
         top: 50px;
         left: auto;
         width: 250px;
@@ -104,94 +113,106 @@
 }
 
 /* Desktop menu */
-.desktop-nav-menu {
+.mainNav__desktopMenu {
     display: none;
     
     ul {
         margin: 0;
         list-style: none;
         text-align: right;
+    }
     
-        li {
-            position: relative;
-            vertical-align: middle;
-            display: inline-block;
-            font-size: 1.6rem;
+    li {
+        position: relative;
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 1.4rem;
         
-            a {
-                display: block;
-                padding: 10px 15px;
+        &.menu-item-has-children {
+            position: relative;
+        }
+    }
+    
+    a {
+        display: block;
+        padding: 10px 15px;
+        
+        &:hover, &:active {
+            opacity: 0.75;
+        }
+    }
+    
+    .sub-menu {
+        position: absolute;
+        visibility: hidden;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        width: 250px;
+        border: solid 1px $gray-tan;
+        background-color: $sand;
+        text-align: left;
+        @include box-shadow(0px 1px 1px 0px rgba(#000, 0.05));
+        opacity: 0;
+        transition: visibility 0.4s ease, opacity 0.4s ease;
+        
+        &.show {
+            z-index: 2;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        &.show-adjust {
+            right: 0;
+            left: auto;
+        }
+        
+        li {
+            display: block;
+            padding-right: 15px;
+            padding-left: 15px;
+            
+            &.menu-item-has-children > a {
+                padding-right: 25px;
                 
-                &:hover, &:active {
-                    opacity: 0.75;
+                &:after {
+                    position: absolute;
+                    top: 9px;
+                    right: 10px;
+                    display: block;
+                    font-family: 'FontAwesome';
+                    content: '\f0da';
                 }
+            }
+            
+            &:first-child > a {
+                border-top: 0;
             }
         }
         
-        .menu-item-has-children {
-            position: relative;
+        a {
+            padding-right: 5px;
+            padding-left: 5px;
+            border-top: solid 1px $gray-tan;
         }
         
         ul {
-            @include box-shadow(0px 2px 2px 0px rgba(#000, 0.05));
-            transition: visibility 0.4s ease, opacity 0.4s ease;
-            position: absolute;
-            visibility: hidden;
-            top: 100%;
-            left: 0;
-            z-index: 1;
-            width: 250px;
-            background-color: $medium-gray;
-            background-color: rgba($medium-gray, 0.9);
-            text-align: left;
-            opacity: 0;
-            
-            &.show {
-                z-index: 2;
-                visibility: visible;
-                opacity: 1;
-            }
+            top: 0;
+            left: 100%;
             
             &.show-adjust {
-                left: auto;
-                right: 0;
-            }
-            
-            li {
-                display: block;
-                
-                &.menu-item-has-children > a {
-                    padding-right: 25px;
-                    
-                    &:after {
-                        position: absolute;
-                        top: 9px;
-                        right: 10px;
-                        display: block;
-                        font-family: 'FontAwesome';
-                        content: '\f0da';
-                    }
-                }
-            }
-            
-            ul {
-                top: 0;
-                left: 100%;
-                
-                &.show-adjust {
-                    left: -100%;
-                }
+                left: -100%;
             }
         }
     }
 }
 
 @include breakpoint($size-md) {
-    #dl-menu {
+    .mainNav__mobileMenu {
         display: none;
     }
     
-    .desktop-nav-menu {
+    .mainNav__desktopMenu {
         display: block;
     }
 }

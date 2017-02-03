@@ -2,7 +2,11 @@
 /* Footer */
 /*--------*/
 
-.main-footer {
+.mainFooter {
     padding: ($space-unit / 2) 0;
-    background-color: $medium-gray;
+    border-top: solid 1px $gray-tan;
+    
+    p {
+        font-size: 1.4rem;
+    }
 }

@@ -10,7 +10,7 @@ function utru_sidebar_init() {
     register_sidebar(array(
         'name'          => __('Main Sidebar', 'unarmed-truth'),
         'id'            => 'main-sidebar',
-        'before_widget' => '<div class="sidebar-widget">',
+        'before_widget' => '<div class="mainSidebar__widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',

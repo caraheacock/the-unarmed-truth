@@ -27,17 +27,14 @@
 }
 
 .bypostauthor {
-    background-color: $light-gray;
+    background-color: $dark-sand;
 }
 
 .sticky {
-    background-color: $light-gray;
+    background-color: $dark-sand;
 }
 
-.wp-caption {
-    background-color: $light-gray;
-    padding: $text-space-unit;
-}
+.wp-caption { }
 
 .wp-caption-text, .gallery-caption {
     text-align: center;
@@ -71,7 +68,14 @@
     box-sizing: content-box;
 }
 
-.main-sidebar, .searchform {
+.wp-caption-text {
+    margin-top: ($text-space-unit / 2);
+    color: $dark-gray-tan;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.mainSidebar, .searchform {
     .screen-reader-text {
         display: none;
     }
