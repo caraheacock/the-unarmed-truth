@@ -45,10 +45,28 @@ main {
 
 section {
     position: relative;
-    padding: $space-unit 0;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: $space-unit 0.5rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    &::before {
+        position: absolute;
+        top: -3px;
+        right: 10px;
+        left: 10px;
+        display: block;
+        height: 5px;
+        border-top: solid 1px $gray-tan;
+        border-bottom: solid 1px $gray-tan;
+        content: ' ';
+    }
+    
+    &:first-child::before {
+        content: none;
+    }
     
     &.pz-no-padding-top {
         padding-top: 0;
@@ -65,4 +83,47 @@ section {
     &.pz-large-padding-bottom {
         padding-bottom: $space-unit * 2;
     }
+    
+    @include breakpoint($size-md) {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+.mainContent, .mainSidebar {
+    .col-inner {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: $space-unit;
+        padding-bottom: $space-unit;
+        
+        @include breakpoint($size-lg) {
+            padding-top: $space-unit * 1.5;
+        }
+    }
+}
+
+@include breakpoint($size-lg) {
+    .mainContent--hasSidebar {
+        .col-inner {
+            padding-right: $space-unit;
+        }
+    }
+}
+
+.pageTitle {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding: $space-unit 0;
+    border-bottom: solid 1px $gray-tan;
+    
+    @include breakpoint($size-md) {
+        width: calc(100% - 30px);
+        margin: 0 15px;
+    }
+}
+
+.sectionTitle {
+    color: $blue;
+    text-transform: uppercase;
 }

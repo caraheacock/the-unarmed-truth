@@ -3,9 +3,9 @@ get_header();
 the_post();
 ?>
 <section>
-    <div class="row pz-section-headline">
+    <div class="row">
         <div class="col xs-12">
-            <div class="col-inner">
+            <div class="col-inner pageTitle">
                 <?php the_title('<h1>', '</h1>'); ?>
             </div>
         </div>

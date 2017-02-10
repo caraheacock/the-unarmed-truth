@@ -1,11 +1,12 @@
 <?php
 get_header();
 $cat_title = single_cat_title('', false);
+$cat_slug = get_queried_object()->slug;
 
 get_template_part_pass_vars(
     'theme/partials/blog-layout',
     array(
-        'title'             => sprintf(__('Category: %s', 'unarmed-truth'), $cat_title),
+        'title'             => '<i class="icon icon-' . $cat_slug . ' icon--large" aria-hidden="true"></i> ' . $cat_title,
         'subtitle'          => sprintf(
                                     _x('%1$s categorized as %2$s', '# categorized as Category', 'unarmed-truth'),
                                     pluralize(

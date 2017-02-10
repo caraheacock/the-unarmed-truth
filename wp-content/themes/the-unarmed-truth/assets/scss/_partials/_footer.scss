@@ -3,10 +3,15 @@
 /*--------*/
 
 .mainFooter {
-    padding: ($space-unit / 2) 0;
+    padding: $space-unit 0.5rem ($space-unit * 2);
     border-top: solid 1px $gray-tan;
     
     p {
         font-size: 1.4rem;
+    }
+    
+    @include breakpoint($size-md) {
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }

@@ -53,7 +53,7 @@
         left: 0;
         display: block;
         height: 9px;
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 8.91"><g><polygon points="7.5 8.91 0 1.41 0 0 15 0 15 1.41 7.5 8.91" fill="%23fff7e7"/><polygon points="7.5 8.91 0 1.41 0 0 7.5 7.5 15 0 15 1.41 7.5 8.91" fill="%23c8b8a7"/></g></svg>');
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 9"><g><polygon points="7.5 8.91 0 1.41 0 0 15 0 15 1.41 7.5 8.91" fill="%23fff7e7"/><polygon points="7.5 8.91 0 1.41 0 0 7.5 7.5 15 0 15 1.41 7.5 8.91" fill="%23c8b8a7"/></g></svg>');
         background-position: top center;
         background-repeat: repeat-x;
         content: ' ';
@@ -74,27 +74,43 @@
 
 /* Mobile menu */
 #dl-menu.dl-menuwrapper {
-    float: right;
+    z-index: 1;
+    float: none;
     height: 45px;
     
-    button, ul {
+    .dl-trigger, ul {
         right: 0;
     }
     
-    button {
+    .dl-trigger {
         position: absolute;
         top: 0;
-        border-radius: 0;
-        @extend %default-transition;
+        padding: 0;
+        background-color: $red;
+        
+        &.dl-active {
+            background-color: $dark-red;
+        }
+        
+        &:hover, &:focus {
+            background-color: $blue;
+        }
     }
     
     ul {
         top: 50px;
         left: auto;
         width: 250px;
+        background-color: $gray-tan;
+        @include box-shadow(0px 1px 1px 0px rgba(#000, 0.05));
         
         li {
             margin: 0;
+            
+            a:hover {
+                background-color: $red;
+                color: #fff;
+            }
         }
     }
     

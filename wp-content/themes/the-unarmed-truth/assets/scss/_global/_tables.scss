@@ -4,14 +4,13 @@
 
 table {
     width: 100%;
-    border: solid 1px $light-gray;
+    border: solid 1px $gray-tan;
     border-collapse: collapse;
-    border-color: rgba($medium-gray, 0.5);
+    border-color: rgba($gray-tan, 0.5);
 }
 
 tr:nth-child(even) {
-    background-color: $light-gray;
-    background-color: rgba($medium-gray, 0.2);
+    background-color: rgba($gray-tan, 0.2);
 }
 
 th {

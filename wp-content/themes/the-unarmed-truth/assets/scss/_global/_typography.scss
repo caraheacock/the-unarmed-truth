@@ -18,9 +18,9 @@ h1, h2, h3, h4, h5, h6, ul, ol {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: $text-space-unit * 2;
-    color: $blue;
+    color: $brown;
     font-family: $cantana-one;
-    font-weight: $semibold;
+    font-weight: $normal;
     line-height: 1.2;
     
     + h1, + h2, + h3, + h4, + h5, + h6 {
@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 3rem;
+    line-height: 1.1;
 }
 
 h2 {
@@ -87,7 +88,7 @@ small {
 
 pre {
     padding: $text-space-unit;
-    background-color: $light-gray;
+    background-color: $gray-tan;
 }
 
 hr {

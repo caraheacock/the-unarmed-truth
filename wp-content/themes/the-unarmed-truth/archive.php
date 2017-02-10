@@ -5,7 +5,7 @@ $month = single_month_title(' ', false);
 get_template_part_pass_vars(
     'theme/partials/blog-layout',
     array(
-        'title'             => sprintf(__('Date: %s', 'unarmed-truth'), $month),
+        'title'             => $month,
         'subtitle'          => sprintf(
                                     _x('%1$s in %2$s', '# posts in Month', 'unarmed-truth'),
                                     pluralize(

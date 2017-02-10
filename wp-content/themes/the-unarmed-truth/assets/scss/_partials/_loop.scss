@@ -3,12 +3,87 @@
 /*------------*/
 
 .loop {
-    @extend %clearfix;
-    padding: $space-unit 0;
-    border-top: solid 1px $medium-gray;
+    @include display-flex;
+    @include flex-direction(column);
+    margin: $space-unit 0;
+    
+    &__featuredImage {
+        position: relative;
+        overflow: hidden;
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex(0 1 300px);
+        height: 300px;
+        background-blend-mode: luminosity;
+        background-color: $gray-tan;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.75;
+    }
+    
+    &__featuredIcon {
+        color: $brown;
+        font-size: 150px;
+    }
+    
+    &__content {
+        @include flex(0 1 auto);
+        padding: ($space-unit / 2);
+        border: solid 1px $gray-tan;
+    }
+    
+    &__header {
+        margin-bottom: ($text-space-unit * 2);
+        padding-bottom: ($text-space-unit * 2);
+        border-bottom: solid 1px $brown;
+    }
+    
+    &__titleLink {
+        color: $brown;
+        
+        &:hover, &:focus {
+            color: $red;
+        }
+    }
     
     &:first-child {
-        padding-top: 0;
-        border-top: 0;
+        margin-top: 0;
+    }
+    
+    &:hover {
+        border-color: transparent;
+        background-color: $dark-sand;
+        
+        .loop__featuredImage {
+            background-blend-mode: normal;
+            opacity: 1;
+        }
+    }
+    
+    @include breakpoint($size-sm) {
+        &--horizontal {
+            @include flex-direction(row);
+            
+            .loop__featuredImage {
+                @include flex(0 0 40%);
+                width: 50%;
+                height: auto;
+            }
+        
+            .loop__content {
+                @include flex-grow(1);
+            }
+        }
+    }
+    
+    @include breakpoint($size-md) {
+        &--horizontal {
+            .loop__featuredImage {
+                @include flex-basis(#{(100% / 3)});
+                width: (100% / 3);
+            }
+        }
     }
 }

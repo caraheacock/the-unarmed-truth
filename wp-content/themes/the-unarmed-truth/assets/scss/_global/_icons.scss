@@ -1,0 +1,88 @@
+/*-------*/
+/* Icons */
+/*-------*/
+
+@font-face {
+    font-family: 'Pe-icon-7-stroke';
+    src: url('../fonts/Pe-icon-7-stroke.eot?d7yf1v');
+    src: url('../fonts/Pe-icon-7-stroke.eot?#iefixd7yf1v') format('embedded-opentype'),
+        url('../fonts/Pe-icon-7-stroke.woff?d7yf1v') format('woff'),
+        url('../fonts/Pe-icon-7-stroke.ttf?d7yf1v') format('truetype'),
+        url('../fonts/Pe-icon-7-stroke.svg?d7yf1v#Pe-icon-7-stroke') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    display: inline-block;
+    font-family: 'Pe-icon-7-stroke';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    // Categories
+    
+    &-economy:before {
+        content: '\e6c0'; // piggy bank
+    }
+    
+    &-education:before {
+        content: '\e60f'; // graduation cap
+    }
+    
+    &-environment:before {
+        content: '\e6b8'; // leaf
+    }
+    
+    &-federal-politics:before {
+        content: '\e662'; // roman building
+    }
+    
+    &-health:before {
+        content: '\e642'; // heart
+    }
+    
+    &-international-politics:before {
+        content: '\e64f'; // globe with lines
+    }
+    
+    &-science:before {
+        content: '\e6c3'; // rocket
+    }
+    
+    &-social-justice:before {
+        content: '\e6b4'; // hammer
+    }
+    
+    &-state-local-politics:before {
+        content: '\e638'; // map marker
+    }
+    
+    &-us-history:before {
+        content: '\e62b'; // book
+    }
+    
+    &-world-history:before {
+        content: '\e691'; // globe
+    }
+    
+    // Other icons
+    
+    &-search:before {
+        content: '\e618';
+    }
+    
+    // Utilities
+    
+    &--large {
+        margin: 0 0.25em;
+        @include transform(scale(1.5));
+    }
+}

@@ -73,3 +73,15 @@ select {
 textarea {
     max-width: 100%;
 }
+
+::-webkit-input-placeholder {
+    color: $dark-gray-tan;
+}
+
+::-moz-placeholder {
+    color: $dark-gray-tan;
+}
+
+:-ms-input-placeholder {
+    color: $dark-gray-tan; 
+}

@@ -5,7 +5,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 get_template_part_pass_vars(
     'theme/partials/blog-layout',
     array(
-        'title'             => sprintf(__('Author: %s', 'unarmed-truth'), $curauth->display_name),
+        'title'             => $curauth->display_name,
         'subtitle'          => sprintf(
                                     _x('%1$s written by %2$s', '# posts written by Author Name', 'unarmed-truth'),
                                     pluralize(

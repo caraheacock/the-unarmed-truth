@@ -3,11 +3,13 @@
 /*---------*/
 
 .mainSidebar {
+    position: relative;
+    
     &__widget {
         margin: $space-unit 0;
         
         &:first-child {
-            margin-top: 10px;
+            margin-top: 0;
         }
     }
     
@@ -29,6 +31,24 @@
         
         a {
             text-decoration: none;
+        }
+    }
+    
+    @include breakpoint($size-lg) {
+        .col-inner {
+            padding-left: $space-unit;
+        }
+        
+        &::before {
+            position: absolute;
+            top: 25px;
+            bottom: 25px;
+            left: -3px;
+            display: block;
+            width: 5px;
+            border-right: solid 1px $gray-tan;
+            border-left: solid 1px $gray-tan;
+            content: '';
         }
     }
 }

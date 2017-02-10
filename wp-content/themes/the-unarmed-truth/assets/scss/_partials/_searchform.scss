@@ -1,0 +1,28 @@
+/*-------------*/
+/* Search Form */
+/*-------------*/
+
+.searchForm {
+    @include flex-wrap(nowrap);
+    
+    &__input, &__submit {
+        margin: 0;
+        font-size: 2rem;
+        height: 5rem;
+        
+        @include breakpoint($size-md) {
+            font-size: 3rem;
+            height: 8rem;
+        }
+    }
+    
+    &__input {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+    
+    &__submit {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}

@@ -33,11 +33,26 @@
     }
 }
 
-%default-transition {
-    transition: all 0.4s ease;
+.fullCoverLink {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 %page-max-width {
     max-width: $max-width;
     margin: 0 auto;
+}
+
+// Hide text for screen readers
+%screen-reader-only {
+    position: absolute;
+    top: auto;
+    left: -100000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }

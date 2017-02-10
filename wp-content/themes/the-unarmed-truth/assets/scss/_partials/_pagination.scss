@@ -16,12 +16,11 @@
     @include flex(0 1 auto);
     margin: 0.2rem 0.2rem;
     padding: 0.5rem 0.7rem;
-    border: solid 1px $medium-gray;
-    color: $medium-gray;
+    color: $dark-gray-tan;
     text-decoration: none;
     
     &.current {
-        background-color: $medium-gray;
+        background-color: $light-blue;
         color: #fff;
     }
     
@@ -40,16 +39,11 @@
 }
 
 a.page-numbers {
-    border-color: transparent;
-    background-color: $light-gray;
+    background-color: $gray-tan;
+    color: $sand;
     
     &:hover, &:focus {
-        background-color: #555;
-        color: #fff;
-    }
-    
-    &:active {
-        background-color: #333;
-        color: #fff;
+        background-color: $dark-gray-tan;
+        color: $sand;
     }
 }

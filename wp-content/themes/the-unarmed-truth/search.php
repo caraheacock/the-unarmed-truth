@@ -4,7 +4,8 @@ get_header();
 get_template_part_pass_vars(
     'theme/partials/blog-layout',
     array(
-        'title'             => sprintf(__('Search: %s', 'unarmed-truth'), get_search_query()),
+        'title'             => '<i class="icon icon-search icon--large"></i> '
+                                 . sprintf(__('Search: %s', 'unarmed-truth'), get_search_query()),
         'subtitle'          => pluralize(
                                     $wp_query->found_posts,
                                     _x('result', 'noun', 'unarmed-truth'),

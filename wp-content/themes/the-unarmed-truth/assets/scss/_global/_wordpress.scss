@@ -42,23 +42,6 @@
 
 /* Other Wordpress classes (not required to style) */
 
-.categories {
-    display: inline-block;
-    margin: 0;
-    list-style: none;
-    
-    .cat-item {
-        display: inline-block;
-        margin: 5px 5px 5px 0;
-        font-size: inherit;
-        
-        a {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
-}
-
 #wp-calendar {
     width: 100%;
     text-align: center;
@@ -75,8 +58,6 @@
     text-align: left;
 }
 
-.mainSidebar, .searchform {
-    .screen-reader-text {
-        display: none;
-    }
+.screen-reader-text {
+    @extend %screen-reader-only;
 }
